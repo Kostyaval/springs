@@ -128,10 +128,11 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
             document.getElementById('main_content').style.display = 'none'; // hide form
 
             document.getElementById('success_content').style.display = 'block';
-            // axios.post('telebot/sendForm.php',{'message': data.phone })
 
             // document.body.style = '';
         };
+        axios.post('telebot/sendForm.php',{'message': data.phone })
+
         // url encode form data for sending as post data
         var encoded = Object.keys(data).map(function(k) {
             return encodeURIComponent(k) + "=" + encodeURIComponent(data[k])
