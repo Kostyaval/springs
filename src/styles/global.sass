@@ -1,0 +1,208 @@
+$primary-color: #2d97ff
+$dark-bg-color: #272f45
+$light-bg-color: #ebeef5
+$hr-color: #82c9d8
+$headline-color: #ffd800
+
+$font-color: #fefefe
+$font-dark-color: #242d3c
+
+$color-success: rgba(#a3ec94, .5)
+$color-error: rgba(245, 5, 5, 0.18)
+
+@mixin main-hr
+  content: " "
+  position: absolute
+  height: 100%
+  width: 1px
+  background-color: $hr-color
+
+.m_geo_mark
+  position: relative
+  &:before
+    font-family: FontAwesome
+    position: absolute
+    height: 18px
+    font-size: 18px
+    left: -3px
+    top: 0
+    bottom: 0
+    margin: auto 0
+    content: '\F041'
+
+.m_w100_btn
+  min-width: 100%
+  @media all and (max-width: 767px)
+    padding: 0
+
+.m_primary_btn
+  border: solid 2px $primary-color
+  color: $font-color
+  font-weight: 700
+  font-size: 18px
+  line-height: 2
+  &:hover
+    border-color: $primary-color
+    background-color: $primary-color
+.m_size_fix
+  @media (min-width: 992px) and (max-width: 1001px)
+    font-size: 17px
+
+.m_blue_color_btn
+  background-color: $font-color
+  margin: 0 auto
+  color: $primary-color
+  &:hover
+    color: $font-color
+
+.isAlwaysHidden
+  display: none
+
+.m_svg_response
+  display: block
+  position: relative
+  &:after
+    content: ''
+    width: 100%
+    padding-bottom: 100%
+
+  .svg_inner
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+
+.b_to_top
+  position: fixed
+  bottom: 20px
+  right: 20px
+  background: rgba($primary-color, 0.6)
+  width: 50px
+  height: 50px
+  text-decoration: none
+  border-radius: 35px
+  display: none
+  transition: all 0.3s ease
+  @include media-breakpoint-up(md)
+    display: none !important
+  i
+    color: #fff
+    margin: 0
+    position: relative
+    left: 16px
+    top: 13px
+    font-size: 19px
+    transition: all 0.3s ease
+  &:hover
+    background: rgba($primary-color, 0.9)
+    i
+      color: #fff
+      top: 5px
+.m_light_logo
+  fill: $light-bg-color
+.m_dark_logo
+  fill: $dark-bg-color
+
+.b_block_title
+  font-size: 30px
+  color: $font-dark-color
+  font-weight: 700
+  text-transform: uppercase
+  text-align: center
+  padding: 10px 0px
+.m_white_color
+  color: #fff
+.js_active_block
+  .header
+    &:after
+      transform: rotate(0) !important
+    &:hover
+      box-shadow: none !important
+
+
+//   Dostavka-i-oplata.html STYLES
+.b_step
+  padding: 20px 0
+  color: $font-dark-color
+  @include make-row
+
+  a, i
+    color: $primary-color
+    text-decoration: underline
+
+  .title
+    text-transform: uppercase
+    font-size: 22px
+    font-weight: 700
+    padding-bottom: 15px
+    padding-left: 55px
+    @include media-breakpoint-up(sm)
+      padding-left: 0
+
+  .image
+    @include img-fluid
+    //max-height: 200px
+    //max-width: 200px
+    display: none
+    @include media-breakpoint-up(sm)
+      display: block
+
+  span
+    position: relative
+    text-align: center
+    display: block
+    height: 100%
+    width: 100%
+
+    @include media-breakpoint-up(sm)
+      height: auto
+      width: auto
+
+
+    @include media-breakpoint-up(sm)
+      //display: inline-block
+      //height: auto
+      //width: auto
+
+
+
+    &:before
+      font-size: 25px
+      font-weight: 700
+      height: 45px
+      width: 45px
+      line-height: 45px
+      display: block
+      border-radius: 50%
+      position: absolute
+      background-color: $headline-color
+      top: -8px
+      left: 0
+
+      @include media-breakpoint-up(sm)
+        top: 0
+        left: 0
+        right: inherit
+        bottom: inherit
+
+  .nth-1:before
+    content: '1'
+  .nth-2:before
+    content: '2'
+  .nth-3:before
+    content: '3'
+  .wrapper
+    display: flex
+    flex-direction: column
+    justify-content: center
+    &:first-child
+      align-items: flex-end
+  .sub_step
+    font-size: 16px
+    @include media-breakpoint-up(md)
+      font-size: 18px
+    & + .sub_step
+      padding-top: 10px
+

@@ -1,0 +1,198 @@
+.l_header
+  padding: 20px 0 10px 0
+  background-color: $dark-bg-color
+  border-bottom: solid 1px $hr-color
+
+//.b_logo
+
+
+.b_site_title
+
+  &:before
+    @include main-hr
+    left: 0
+    top: 0
+  .title
+    font-size: 18px
+    line-height: 1.1
+    font-weight: 700
+    & + .title
+      padding-top: 5px
+  .description
+    margin-top: 20px
+    padding-left: 15px
+    font-size: 14px
+
+.m_site_title_lg
+  padding-top: 30px
+  .title
+    font-size: 15px
+  .description
+    font-size: 10px
+  &:before
+    height: 1px
+    width: calc(100% - 30px)
+    top: 20px
+    right: 0
+    left: 15px
+
+
+
+.b_call
+  //min-width: 165px
+  text-align: right
+  @include media-breakpoint-up(sm)
+    text-align: left
+  @include media-breakpoint-up(lg)
+    text-align: center
+  .number
+    padding: 3px 0
+    display: block
+    &:first-child
+      padding-top: 0
+    &:last-child
+      padding-bottom: 0
+
+
+  .icon
+    display: inline-block
+    vertical-align: middle
+    width: 19px
+    height: 18px
+    font-size: 18px
+  .m_icon_fa
+    padding-left: 2px
+  span
+    font-size: 18px
+    display: inline-block
+    vertical-align: middle
+    @include media-breakpoint-up(xl)
+      font-size: 20px
+
+.b_navigation
+  text-transform: uppercase
+  padding-top: 30px
+
+  .list
+    display: block
+    text-align: center
+    font-size: 0
+  .item
+    padding: 5px 13px
+    display: inline-block
+    font-size: 18px
+    font-weight: 700
+    color: #fefefe
+    @include media-breakpoint-up(lg)
+      padding: 5px 20px
+
+
+    transition: color .15s ease-in
+    position: relative
+
+  .link
+    display: inline-block
+    &::after
+      position: absolute
+      content: ''
+      display: block
+      width: 0
+      height: 2px
+      bottom: -10px
+      left: 19px
+
+      background: $primary-color
+      transition: width .2s ease-in
+    &:hover::after
+      color: $primary-color
+      width: calc(100% - 38px)
+    &:hover
+      color: $primary-color
+.b_burger
+  display: none
+  cursor: pointer
+  color: $font-color
+  font-size: 18px
+  padding: 0 5px
+  position: relative
+  background: $primary-color
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  text-align: center
+  vertical-align: middle
+  transition: all 0.5s ease
+  border: 2px solid transparent
+  box-shadow: 0 0 8px -2px #333
+  &.js_open
+    border: 2px solid #fff
+    box-shadow: none
+    .icon
+      background: transparent
+      &:before, &:after
+        transform-origin: 0 50%
+        width: 28.28427125px
+      &:before
+        transform: rotateZ(0.7854rad)
+      &:after
+        transform: rotateZ(-0.7854rad)
+  .icon
+    display: inline-block
+    position: absolute
+    background: #fff
+    margin: 0 auto
+    width: 20px
+    height: 2px
+    top: 50%
+    left: 0
+    right: 0
+    transition: all 0.5s ease
+    transform: translateY(-1px)
+    &:before, &:after
+      content: ""
+      position: absolute
+      margin: 0 auto
+      background: #fff
+      width: 20px
+      height: 2px
+      left: 0
+      right: 0
+      transition: all 0.5s ease
+    &:before
+      bottom: 10px
+    &:after
+      top: 10px
+
+.l_nav
+  height: 65px
+@media all and (max-width: 767px)
+  .b_burger
+    display: inline-block
+  .l_nav
+    height: auto !important
+  .b_navigation
+    .list
+      display: none
+      text-align: left
+    .item
+      display: block
+    .link
+      display: block
+      text-align: center
+      &::after
+        content: ''
+        height: 0
+
+.js_fixed_header
+  background-color: $dark-bg-color
+  z-index: 100
+  top: 0
+  left: 0
+  width: 100%
+  border-bottom: solid 1px $hr-color
+  padding: 10px 0
+  position: fixed
+  display: none
+
+  @include media-breakpoint-up(md)
+    display: block

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="l_contact">
+//= partials/header.html
+<main>
+	<section class="container l_contact_info">
+		<div class="b_block_title ">Контакты</div>
+		<div class="b_contact_info">
+			<div class="custom_row">
+				<p class="left">Вы можете связатся с нами по этим номерам:</p>
+				<ul class="right">
+					<li><a class="link" href="tel:0973058185"> +380 97-305-81-85</a></li>
+					<li><a class="link" href="tel:0662838082"> +380 66-283-80-82</a></li>
+					<li><a class="link" href="tel:+380532591590"> +380 0532-591-590</a></li>
+					<li>Прийом звонков Пн-Вс</li>
+				</ul>
+			</div>
+			<div class="custom_row">
+				<p class="left">Электронная почта:</p>
+				<p class="right"><a href="mailto:info@gmail.com" class="link">info@gmail.com</a></p>
+			</div>
+			<div class="custom_row">
+				<p class="left">Наши адреса:</p>
+				<ul class="right">
+					<li>Полтава, улица Котляревского 1/27, офис 708</li>
+					<li>Киев, улица 9 мая 42</li>
+				</ul>
+			</div>
+			<div class="custom_row">
+				<p class="left">Режим работы:</p>
+				<ul class="right">
+					<li>Пн-Пт</li>
+					<li>9:00-18:00</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<div class="b_block_title ">Карта проезда</div>
+	<div class="map-container">
+		<div class="b_place_card">
+			<div class="container">
+
+				<div class="left">
+					<p class="business-name">Industrial Springs</p>
+					<p class="info">г. Полтава, ул. Котляревского 1/27, офис 708, Торговый Дом "Кип"</p>
+					<a class="view-large" target="_blank" href="https://www.google.com/maps/dir//Poltava,+Poltavs'ka+oblast,+Ukraine,+36000/@49.5882459,34.4813774,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40d825e425e6ba6b:0xcf3e6bdfb9e4ca82!2m2!1d34.5514169!2d49.588267?hl=en-US" id="A_41">View larger map</a>
+				</div> <!-- left -->
+
+				<div class="right">
+					<a class="direction-link" target="_blank" href="https://www.google.com/maps/dir//Poltava,+Poltavs'ka+oblast,+Ukraine,+36000/@49.5882459,34.4813774,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40d825e425e6ba6b:0xcf3e6bdfb9e4ca82!2m2!1d34.5514169!2d49.588267?hl=en-US"
+					   id="A_9">
+						<div class="direction-icon"></div>
+						Маршрут
+					</a>
+				</div> <!-- right -->
+
+			</div> <!-- container -->
+		</div> <!-- placeDiv -->
+	</div> <!-- map-container -->
+	<div id="map"></div>
+
+
+
+
+</main>
+//= partials/footer.html
+//= partials/elements.html
+<script src="scripts/main.js"></script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASbI2tVJSysRqSQrRZ9Il2t_kMdjqys8Y&callback=initMap">
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.l_footer
+  padding: 40px 0 20px 0
+  background-color: $light-bg-color
+  color: $font-dark-color
+  font-size: 14px
+  .m_footer_btn
+    margin-top: 15px
+    color: $primary-color
+    &:hover
+      color: $font-color
+  .b_call
+    font-weight: 700
+    font-size: 22px
+    .work_time
+      font-size: 14px
+      font-weight: 400
+
+      color: $primary-color
+
+
+.b_footer_logo
+  padding: 10px 15px
+  .description
+    padding-top: 10px
+  .address
+    display: block
+    margin-top: 15px
+    font-size: 14px
+    color: $primary-color
+  svg
+    padding: 0 15px
+.b_footer_links
+  padding-bottom: 20px
+  @include media-breakpoint-up(md)
+    padding-bottom: 0
+  .title
+    font-size: 22px
+    font-weight: 700
+    text-transform: uppercase
+    margin-bottom: 10px
+    padding-bottom: 10px
+    border-bottom: 2px solid rgba($font-dark-color, .6)
+    &:not(:first-child)
+      padding-top: 10px
+  .link
+    margin-top: 7px
+    padding-left: 15px
+    display: block
+    font-size: 14px
+    transition: color .15s ease-in
+    position: relative
+    @include media-breakpoint-up(lg)
+      font-size: 16px
+
+    &:hover
+      color: $primary-color
+    &:before
+      position: absolute
+      content: '\f0c8'
+      font-family: FontAwesome
+      font-size: 6px
+      color: $primary-color
+      left: 0
+      top: 10px
+.b_email_address
+  padding-top: 10px
+  font-size: 14px
+  color: $primary-color
+  .item
+    display: block
+    font-size: 18px
+    color: $font-dark-color

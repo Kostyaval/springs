@@ -1,0 +1,270 @@
+.l_modal
+  z-index: 1000
+  width: 100%
+  height: 100%
+  position: fixed
+  top: 0
+  left: 0
+  background: rgba(#000, 0.85)
+  visibility: hidden
+  opacity: 0
+  transition: all 0.25s ease-in-out
+  &.js_open
+    opacity: 1
+    visibility: visible
+    & .b_popup_phone
+      //margin-top: -200px
+      opacity: 1
+.b_popup_phone
+  z-index: -1
+  width: 270px
+  display: block
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  background: #fff
+  opacity: 0
+  transition: all 0.5s ease-in-out
+  color: $font-dark-color
+  border-radius: 10px
+  @include media-breakpoint-up(sm)
+    width: 350px
+  &.js_open
+    opacity: 1
+    z-index: 99999
+
+  .head
+    width: 100%
+    height: 35px
+    overflow: hidden
+    background: $primary-color
+    border-top-right-radius: 10px
+    border-top-left-radius: 10px
+
+
+  .btn-close
+    margin-top: 3px
+    border: 0
+    float: right
+    background: transparent
+    cursor: pointer
+    &::before, &::after
+      content: ''
+      width: 30px
+      height: 3px
+      display: block
+      background: #fff
+    &::before
+      margin-top: 12px
+      transform: rotate(45deg)
+    &::after
+      margin-top: -3px
+      transform: rotate(-45deg)
+
+  .main_content
+    padding: 5%
+  .title
+    text-align: center
+    font-size: 24px
+  .description
+    padding-top: 5px
+    font-size: 15px
+    text-align: center
+  .phone_holder
+    margin-top: 12px
+    border: none
+    padding: 5px 5px
+    border-bottom: 2px solid rgba(30,30,30,0.2)
+    font-size: 24px
+    font-weight: 400
+    //letter-spacing: -0.5px
+    width: 100%
+    max-width: 100%
+    text-indent: 17px
+    transition: background-color .2s ease-in
+
+  .phone_submit
+    background-color: $primary-color
+    //line-height: 45px
+    height: 45px
+    padding: 0 30px
+    border-radius: 45px
+    border: 0
+    color: #fff
+    font-size: 20px
+    display: block
+    margin: 20px auto 10px
+    cursor: pointer
+    transition: transform .15s ease-in
+    &:hover
+      transform: scale(1.05)
+  .js_error
+    background-color: $color-error
+
+  .success_content
+    display: none
+  .success_svg
+    text-align: center
+    padding: 35px
+  .not_work_time_content
+    display: none
+    padding: 30px 10px
+
+.blur
+  filter: blur(5px)
+.preloader
+  display: none
+  position: absolute
+  height: 3px
+  width: 100%
+  top: 0
+  left: 0
+  animation: preloader-background ease-in 3.5s infinite
+
+  &:before,
+  &:after
+    content: ''
+    position: absolute
+    height: 3px
+    width: 0
+    top: 0
+    animation: preloader-front ease-in 3.5s infinite
+  &:after
+    right: 50%
+  &:before
+    left: 50%
+
+
+@keyframes preloader-background
+  0%, 24.9%
+    background-color: $headline-color
+
+  25%, 49.9%
+    background-color: $primary-color
+
+  50%, 74.9%
+    background-color: $headline-color
+
+  75%, 100%
+    background-color: $primary-color
+
+
+@keyframes preloader-front
+  0%
+    width: 0
+    background-color: $primary-color
+
+  24.9%
+    width: 50%
+    background-color: $primary-color
+  25%
+    width: 0
+    background-color: $headline-color
+
+  49.9%
+    width: 50%
+    background-color: $headline-color
+
+  50%
+    width: 0
+    background-color: $primary-color
+
+  74.9%
+    width: 50%
+    background-color: $primary-color
+
+  75%
+    width: 0%
+    background-color: $headline-color
+
+  100%
+    width: 50%
+    background-color: $headline-color
+
+
+.svg-success
+  stroke-width: 2px
+  stroke: $headline-color
+  fill: none
+  & path
+    stroke-dasharray: 17px, 17px
+    stroke-dashoffset: 0px
+    -webkit-animation: checkmark 0.25s ease-in-out 0.7s backwards
+    animation: checkmark 0.25s ease-in-out 0.7s backwards
+  & circle
+    stroke-dasharray: 76px, 76px
+    stroke-dashoffset: 0px
+    transform: rotate(-90deg)
+    transform-origin: 50% 50%
+    -webkit-animation: checkmark-circle 0.6s ease-in-out forwards
+    animation: checkmark-circle 0.6s ease-in-out forwards
+
+@keyframes checkmark
+  0%
+    stroke-dashoffset: 17px
+  100%
+    stroke-dashoffset: 0
+
+
+@keyframes checkmark-circle
+  0%
+    stroke-dashoffset: 76px
+  100%
+    stroke-dashoffset: 0px
+//
+.b_fixed_phone
+  cursor: pointer
+  bottom: 40px
+  border-radius: 50%
+  position: fixed
+  display: none
+  height: 70px
+  width: 70px
+  right: 20px
+  opacity: .75
+  background-color: #000
+  padding: 14px
+  box-shadow: 0px 0px 5px $primary-color
+  transition: transform .3s ease-in
+  @include media-breakpoint-up(md)
+    display: block !important
+  &:hover
+    transform: rotate(20deg) scale(1.1)
+
+  .svg
+    fill: $primary-color
+  .path2
+    animation: fixed_phone-path2 2.5s ease-in infinite
+  .path3
+    animation: fixed_phone-path3 2.5s ease-in infinite
+
+
+
+
+
+@keyframes fixed_phone-path2
+  0%
+    opacity: 0
+  25%
+    opacity: 1
+  50%
+    opacity: 1
+  75%
+    opacity: 0
+  100%
+    opacity: 0
+@keyframes fixed_phone-path3
+  0%
+    opacity: 0
+  25%
+    opacity: 0
+  50%
+    opacity: 1
+  75%
+    opacity: 1
+  100%
+    opacity: 0
+
+.js_phone_trigger
+  cursor: pointer

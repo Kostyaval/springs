@@ -1,0 +1,111 @@
+.l_contact_info
+  padding: 30px 0
+.b_contact_info
+  padding: 30px 15px
+  font-size: 0
+  color: $font-dark-color
+  .custom_row
+    padding: 10px 0
+    + .custom_row
+      border-top: 1px solid rgba($hr-color, 0.2)
+  .left
+    color: #74787f
+    display: inline-block
+    font-size: 17px
+    width: 40%
+    vertical-align: top
+  .right
+    padding-left: 10px
+    display: inline-block
+    font-size: 17px
+    width: 60%
+    line-height: 1.5em
+    li + li
+      padding-top: 5px
+
+@media (max-width: 630px)
+  .b_contact_info .left
+    width: 50%
+    font-size: 14px
+
+@media (max-width: 630px)
+  .b_contact_info .right
+    width: 50%
+    font-size: 14px
+
+#map
+  margin-top: 40px
+  height: 400px
+  width: 100%
+  max-width: 100%
+  position: relative
+
+
+.map-container
+  color: #000
+  position: relative
+
+.b_place_card
+  margin-top: 40px
+  z-index: 1
+  position: absolute
+  .container
+    box-shadow: rgba(0, 0, 0, 0.29804) 0px 1px 4px -1px
+    max-width: 330px
+    width: 100%
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box
+    border-radius: 2px 2px 2px 2px
+    font: normal normal normal normal 11px / normal Roboto, Arial, sans-serif
+    margin: 10px
+    padding: 9px 4px 9px 11px
+    overflow: hidden
+  .left
+    float: left
+    width: 75%
+  .right
+    text-align: center
+    float: left
+    width: 25%
+  .business-name
+    cursor: default
+    height: 19px
+    text-overflow: ellipsis
+    white-space: nowrap
+    width: 200px
+    perspective-origin: 100px 9.5px
+    transform-origin: 100px 9.5px
+    font: normal normal 500 normal 14px / normal Roboto, Arial
+    overflow: hidden
+    margin: 0
+  .info
+    color: rgb(91, 91, 91)
+    cursor: default
+    height: 32px
+    width: 200px
+    column-rule-color: rgb(91, 91, 91)
+    perspective-origin: 100px 16px
+    transform-origin: 100px 16px
+    border: 0px none rgb(91, 91, 91)
+    font: normal normal normal normal 12px / normal Roboto, Arial
+    margin: 6px 0px 0px
+    outline: rgb(91, 91, 91) none 0px
+  .direction-icon
+    background: rgba(0, 0, 0, 0) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAmCAYAAACyAQkgAAAAAXNSR0IArs4c6QAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAAnhJREFUWAntlj9LHEEUwN/scXsXRE0QU4R0ChYKsbEKyFViKu0s4xdIlUYU4cAQUgbyBWzTaWXKNZCIjWChfVorNQnk7mBf5t3x7uZ2b3be7J1wCTvFzdv3b3739u3MAPwjQ9k4azt/1uMgeDrxs/z55JNq2PyS+lodH2OrGSHCi6RN/oynX99Xa6Z/YD6w3IGERYB49vdka+vVG6ywzTVHdXWrymFNKbh0+frYU6A9SE4zHrB9oGnI8YHtgtohxwO2Dfpyv7EYB9STrpG/DXTmO1f2LHsb9NtB5SqI4SrLsWfzh41bzY86frqXw1/qvvroQ/XLQ8Cu7jUOAeG1P1p/RBeU1KOGHRUksfWB5oH9NdVcp7jkGCUk5U6BktKnsgpxnnYMiuMxakjKOxCUDD6wtGMw7Oqu/nCEPUmnl/QEs571BEvDvb92/Dq/6ome90yNTW5D6qOW7Om7gfCsN5NLK4sYPNNxb81Ym8yQdC+Q3g2sr95cRASrcEPHVM24QbIJyXYJrAiUEmbColrRPTTHC2fMx3SzIrCkjwtWDEqJrbAK1pILp5+p7yqbgyDZl2EBVMQ6np0fEzuas95+tgDxOekUqCUE2DbtSVnbf5TCcDkLMhmTfPaqKAc3yuEJy3orWunKFqEUxNvDQFLaXKDndXXP9wJUrlsXnkbvHkWW/yBW5wKl7M1q60K/UucHhBAcimkyHHODfq9P3uj+nMnI3TaVwvKRy0dizw1KyfWXGDsWuR62Nzn/UKC6Pxc4kWW+t+i91UOBulbTrXHm8pHaHxRUCiHxK0AlVfLxKSrqUy2Jb1FRSZV8fIqK+lRL4ltUVFKl/9LnL1IB/axosXzpAAAAAElFTkSuQmCC') no-repeat scroll 0px 0px
+    background-size: contain
+    height: 22px
+    width: 22px
+    margin-right: auto
+    margin-left: auto
+  .direction-link
+    color: #3a84df !important
+
+    display: block
+    height: 43px
+    text-decoration: none
+    width: 54.7344px
+  .view-large
+    display: block
+    margin-top: 10px
+    color: #3a84df !important
+    text-decoration: none
+

@@ -1,0 +1,61 @@
+.l_product_card
+  padding: 30px 0
+
+.b_product_header
+  color: $font-dark-color
+  margin: 0 auto
+  text-align: center
+  padding: 20px 0 35px 0
+
+  .title
+    font-size: 30px
+    font-weight: 700
+    text-transform: uppercase
+    padding-bottom: 10px
+  .sub_title
+    font-size: 16px
+    padding-top: 5px
+
+.b_product_gallery
+  padding-top: 10px
+  .main_image
+    @include img-fluid
+    @include media-breakpoint-up(md)
+      padding: 0 10px
+
+  .gallery_nav
+    padding-top: 10px
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+  .image
+    @include img-fluid
+  .item
+    padding: 10px 0
+    margin: 0 6px
+    @media (max-width: 1199px)
+      max-width: 99px
+    @media (max-width: 992px)
+      max-width: 70px
+    @media (max-width: 358px)
+      max-width: 60px
+
+.b_product_content
+  color: $font-dark-color
+  .title
+    text-align: center
+    font-size: 19px
+    font-weight: 700
+    text-transform: uppercase
+    padding-bottom: 10px
+  .paragraph
+    font-size: 14px
+    line-height: 1.6
+    margin-bottom: 15px
+
+.b_product_btn
+  margin-top: 20px
+
+
+

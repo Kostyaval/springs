@@ -1,0 +1,74 @@
+.l_promo_banner
+  padding: 20px 0
+  background-color: $dark-bg-color
+
+.b_promo
+  max-width: 900px
+  margin: 20px auto
+  padding: 20px 0
+  text-align: center
+  border: solid 2px $headline-color
+  .title
+    font-size: 18px
+    padding: 10px 15px
+    font-weight: 700
+    @include media-breakpoint-up(sm)
+      font-size: 22px
+    @include media-breakpoint-up(md)
+      font-size: 24px
+  .sub_title
+    font-size: 16px
+    padding: 5px 15px
+    @include media-breakpoint-up(sm)
+      font-size: 18px
+    @include media-breakpoint-up(md)
+      font-size: 20px
+
+  .list
+
+  .item
+
+  .circle
+    width: 100px
+    height: 100px
+    margin: 20px auto
+    background-color: darken($dark-bg-color, 3%)
+    border: solid 2px $headline-color
+    border-radius: 50%
+    transition: all .15s ease-in
+    &:hover
+      background-color: $headline-color
+      border-color: $headline-color
+    &:hover use
+      fill: #000 !important
+
+  .icon
+    width: 50px
+    height: 100px
+    use
+      transition: fill .15s ease-in
+      fill: #fff !important
+
+  .description
+    font-size: 14px
+    padding: 0 10px
+    @include media-breakpoint-up(sm)
+      font-size: 16px
+    @include media-breakpoint-up(md)
+      font-size: 18px
+  .main_offer
+    color: $headline-color
+    padding: 10px 15px
+    margin: 0 auto
+    max-width: 630px
+    font-size: 16px
+    @include media-breakpoint-up(sm)
+      font-size: 20px
+    @include media-breakpoint-up(md)
+      font-size: 22px
+
+
+
+
+
+
