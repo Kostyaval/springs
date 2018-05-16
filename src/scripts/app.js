@@ -221,3 +221,6 @@ function initMap() {
         map: map
     });
 }
+$( ".b_catalog_list .item" ).hover(function() {
+    $( ".b_catalog_list .img" ).addClass('active')
+});

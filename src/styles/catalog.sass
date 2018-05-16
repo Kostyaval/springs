@@ -1,0 +1,129 @@
+.l_catalog_page
+
+  .main_title
+    font-size: 25px
+    color: $font-dark-color
+    font-weight: 700
+    padding: 20px 0
+.b_catalog_list
+  padding-top: 40px
+  font-size: 0
+  margin-top: -1px
+  margin-left: -1px
+
+  .item
+    vertical-align: top
+    //height: 142px
+    font-size: 16px
+    //font-weight: 700
+    color: #000
+    position: relative
+    outline: 1px solid #fff
+    margin-top: 1px
+    margin-left: 1px
+    display: inline-block
+    width: calc(20% - 1px)
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15)
+    transition: outline .0s ease-in, background-color .2s ease-in, transform .2s ease-in, opacity .2s ease-in, background-color .2s ease-in
+    background-color: #fff
+    &:hover  .img:after
+      content: 'Просмотреть'
+      opacity: 1
+      background-color: rgba($primary-color, 0.75)
+    &:hover .title
+      background-color: rgba($primary-color, 1)
+    &:hover
+      outline: 1px solid transparent
+
+      z-index: 2
+      transform: scale(1.1)
+  .img
+    height: 142px
+    background-size: contain
+    background-position: top center
+    text-align: center
+    transition: all .2s ease-in
+
+    &:after
+      content: ''
+      position: absolute
+      background-color: rgba($primary-color, 0.05)
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      display: flex
+      align-items: center
+      margin-bottom: 40px
+      text-align: center
+      color: $font-color
+      font-weight: 700
+      font-size: 20px
+      //height: 100%
+      justify-content: center
+      z-index: 1
+      transition: opacity .2s ease-in, background-color .2s ease-in
+      opacity: 0
+
+
+
+
+  .title
+    height: 40px
+    //display: block
+    padding: 0 4px
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    background-color: rgba($primary-color, .7)
+    //line-height: 1.05
+    color: $font-color
+
+  img
+    height: 142px
+    @include img-fluid
+    max-height: 100%
+
+
+
+
+
+
+
+  span
+    line-height: 1
+    position: absolute
+    display: flex
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    align-items: center
+    justify-content: center
+    margin-top: 100px
+    //background: 300px rgba(darken($primary-color, 20%), .7)
+    transition: padding .2s ease-in
+    &:hover
+      padding-top: 0
+
+
+
+
+  //&:after
+    //  background-size: 1px 200px
+    //  content: 'Пружыны'
+    //  position: absolute
+    //  top: 0
+    //  left: 0
+    //  right: 0
+    //  bottom: 0
+    //  opacity: .5
+    //  transition: opacity .2s ease-in
+    //&:hover:after
+    //  opacity: 1
+      //content: none
+
+    //border: 1px solid
+
+
