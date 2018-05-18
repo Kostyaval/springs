@@ -224,3 +224,202 @@ function initMap() {
 $( ".b_catalog_list .item" ).hover(function() {
     $( ".b_catalog_list .img" ).addClass('active')
 });
+//
+// $(document).ready(function(){
+//     $("#filter").keyup(function(){
+//
+//         // Retrieve the input field text and reset the count to zero
+//         var filter = $(this).val(), count = 0;
+// console.log(filter)
+//         // Loop through the comment list
+//         $(".b_catalog_list .item").each(function(){
+//
+//             // If the list item does not contain the text phrase fade it out
+//             if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+//                 $(this).fadeOut();
+//                 console.log($(this).find($('.title')))
+//                 // Show the list item if the phrase matches and increase the count by 1
+//             } else {
+//                 $(this).find($('.title')).html( $(this).find($('.title')).html().replace( new RegExp( filter+'(?!([^<]+)?>)', 'gi' ), '<span class="highlight">$&</span>' ) );
+//
+//                 $(this).show();
+//                 count++;
+//             }
+//             if($('.b_catalog_list .item')){console.log($('.b_catalog_list .item'))}else {$('.b_catalog_list').fadeOut()}
+//             if($('.b_catalog_list .item').length === $('.b_catalog_list .item').prop('style').length){
+//                 //return true
+//                 console.log('true');
+//             }
+//             else{
+//                 //return false
+//                 console.log('false');
+//             }
+//         });
+//
+//         // Update the count
+//         var numberItems = count;
+//         $("#filter-count").text("Number of Filter = "+count);
+//     });
+// });
+
+;( function( $, window, document, undefined )
+{
+    var $container = $( '.b_catalog_list' );
+    if( !$container.length ) return true;
+
+    var $input			= $('input'),
+        $notfound		= $( '.b_no_matches' ),
+        $items			= $container.find( '.item' ),
+        $item			= $(),
+        itemsIndexed	= [];
+
+    $items.each( function()
+    {
+        itemsIndexed.push( $( this ).find('.title').text().replace( /\s{2,}/g, ' ' ).toLowerCase() );
+    });
+
+    $input.on( 'keyup', function( e )
+    {
+        if( e.keyCode == 13 ) // enter
+        {
+            $input.trigger( 'blur' );
+            return true;
+        }
+
+        $items.each( function()
+        {
+            $item = $( this );
+            $item.find('.title').html( $item.find('.title').html().replace( /<span class="highlight">([^<]+)<\/span>/gi, '$1' ) );
+        });
+
+        var searchVal = $.trim( $input.val() ).toLowerCase();
+        if( searchVal.length )
+        {
+            for( var i in itemsIndexed )
+            {
+                $item = $items.eq( i );
+
+
+                if( itemsIndexed[ i ].indexOf( searchVal ) != -1 ) {
+                    $item.removeClass('is-hidden')
+                    $item.find('.title').html($item.find('.title').html().replace(new RegExp(searchVal + '(?!([^<]+)?>)', 'gi'), '<span class="highlight">$&</span>'));
+
+                }else {
+                    $item.addClass('is-hidden');
+                }
+                // $('.b_catalog_list').eq(i).removeClass('is-hidden')
+
+            }
+
+        }
+
+
+        else $items.removeClass( 'is-hidden' );
+
+        for (var b = 0; b < 4; b++) {
+
+            if($('.b_catalog_list').eq(b).children('.item').length === $('.b_catalog_list').eq(b).children('.is-hidden').length){
+                console.log('скрыто все: '+ $('.b_catalog_list').eq(b).children('.item').length === $('.b_catalog_list').eq(b).children('.is-hidden').length)
+                console.log('номер- '+ b + ' ' + $('.b_catalog_list').eq(b).children('.is-hidden').length)
+                console.log($('.b_catalog_list').eq(b).children('.item').length)
+                $('.b_catalog_list').eq(b).addClass('is-hidden')
+
+            } else {
+                console.log('скрыто все: '+ ' ' + $('.b_catalog_list').eq(b).children('.item').length === $('.b_catalog_list').eq(b).children('.is-hidden').length)
+
+                $('.b_catalog_list').eq(b).removeClass('is-hidden')
+
+
+            }
+        }
+        $notfound.toggleClass( 'is-visible', $items.not( '.is-hidden' ).length == 0 );
+        console.log($items)
+    });
+})( jQuery, window, document );
+
+
+// toggling items on title press
+
+$.fn.extend({
+    animateCss: function(animationName, callback) {
+        var animationEnd = (function(el) {
+            var animations = {
+                animation: 'animationend',
+                OAnimation: 'oAnimationEnd',
+                MozAnimation: 'mozAnimationEnd',
+                WebkitAnimation: 'webkitAnimationEnd',
+            };
+
+            for (var t in animations) {
+                if (el.style[t] !== undefined) {
+                    return animations[t];
+                }
+            }
+        })(document.createElement('div'));
+
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+
+            if (typeof callback === 'function') callback();
+        });
+
+        return this;
+    },
+});
+
+
+    // hide our element on page load
+
+
+// var waypoint = new Waypoint({
+//     element: document.getElementById('l_advantages'),
+//     handler: function() {
+//         // $('.b_single_plus').animateCss('animated bounceInLeft');
+// console.log(ekfneferfnrjefn)
+//     }
+// })
+
+
+
+// var flag = true;
+//     var waypoint = new Waypoint({
+//         element: document.getElementsByClassName('l_advantages'),
+//         handler: function() {
+//             if(flag){
+//
+//                 console.log(flag)
+//             $('.b_single_plus:nth-child(2n)').animateCss('animated fadeInRightBig').removeClass('no_visible');
+//             flag = false;
+//             console.log($('this'))
+//             }else {
+//                 console.log('dedede')
+//             }
+//         },
+//         offset: '70%'
+//     });
+$('.b_block_title, .b_step, .b_single_plus').css('opacity','0')
+
+$('.l_advantages').waypoint({
+    handler: function() {
+        $('.b_single_plus:nth-child(2n+1)').animateCss('animated fadeInLeftBig').css('opacity','1');
+        $('.b_single_plus:nth-child(2n)').animateCss('animated fadeInRightBig').css('opacity','1');
+        this.destroy()
+    },
+    offset: '50%'
+})
+$('.b_block_title').waypoint({
+    handler: function() {
+        console.log('efeferf')
+        $(this.element).animateCss('animated slideInUp').css('opacity','1');
+        this.destroy()
+    },
+    offset: '90%'
+})
+$('.l_steps').waypoint({
+    handler: function() {
+        $('.b_step:nth-child(2n+1)').animateCss('animated fadeInLeftBig').css('opacity','1');
+        $('.b_step:nth-child(2n)').animateCss('animated fadeInRightBig').css('opacity','1');
+        this.destroy()
+    },
+    offset: '50%'
+})
