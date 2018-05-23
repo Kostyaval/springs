@@ -137,16 +137,21 @@ $bg-width: 120px
     margin: 0 auto
     padding-left: $bg-width + 10px
     padding-right: 5px
-    background: 10px center no-repeat
+    background: 5px center no-repeat
     background-size: 120px auto
+
     @include media-breakpoint-up(sm)
+      max-width: 450px
       font-size: 18px
+      background-size: 150px auto
+
+    @include media-breakpoint-up(sm)
 
     @include media-breakpoint-up(xl)
       align-items: flex-end
-      background: center top no-repeat
+      background: center 5px no-repeat
       height: 150px
-      background-size: 120px auto
+      background-size: 180px auto
       padding: 0 10px 10px
 
 
@@ -235,6 +240,15 @@ $bg-width: 120px
       color: darken($font-color, 10%)
     &.no_visible
       opacity: 0
+  &.m_light_bg
+    .b_single_plus
+      .icon
+        fill: $primary-color
+      .title
+        color: $primary-color
+      .description
+        color: $font-dark-color
+
 .l_steps
   padding: 20px 0 40px 0
 

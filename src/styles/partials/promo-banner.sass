@@ -1,13 +1,46 @@
 .l_promo_banner
   padding: 20px 0
   background-color: $dark-bg-color
+  .container
+    position: relative
+    &:before, &:after
+      content: none
 
+      width: 100px
+      background: center center no-repeat
+      background-size: contain
+      position: absolute
+      height: 162px
+      @include media-breakpoint-up(xl)
+        width: 120px
+    &:before
+      background-image: url(../images/bg_springs_1.png)
+      @include media-breakpoint-up(lg)
+        content: ''
+        top: -27px
+        left: -35px
+
+      @include media-breakpoint-up(xl)
+        top: 40px
+        left: -10px
+    &:after
+      background-image: url(../images/bg_springs_2.png)
+      @include media-breakpoint-up(lg)
+        content: ''
+        right: -15px
+        bottom: -40px
+      @include media-breakpoint-up(xl)
+        right: -10px
+        bottom: 40px
 .b_promo
   max-width: 900px
   margin: 20px auto
   padding: 20px 0
   text-align: center
   border: solid 2px $headline-color
+
+
+
   .title
     font-size: 18px
     padding: 10px 15px

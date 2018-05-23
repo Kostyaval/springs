@@ -16,7 +16,9 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     minify = require('gulp-minify'),
     gulp_remove_logging = require("gulp-remove-logging"),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    purify = require('gulp-purifycss');
+
 
 var path = {
     build: {
@@ -115,7 +117,11 @@ gulp.task('css:build', function () {
         .pipe(autoprefixer('> 1%', 'last 5 versions', 'Firefox < 20', 'ie 8', 'ie 9'))
         .pipe(gulp.dest(path.build.styles))
 });
-
+gulp.task('css:build:cleare', function() {
+  return gulp.src('./build/styles/main.css')
+    .pipe(purify(['./build/**/*.js', './build/**/*.html']))
+    .pipe(gulp.dest('./build/styles/min'));
+});
 gulp.task('sass:build', function () {
     return gulp.src(path.src.styles)
         .pipe(plumber())
